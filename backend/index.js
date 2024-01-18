@@ -8,6 +8,8 @@ const port=3000;
 app.use(express.json());
 app.use(cors());
 
+console.log("testing");
+
 app.post('/todo', async (req,res)=>{
     const payload=req.body;
     const parsedpayload = createTodo.safeParse(payload);
