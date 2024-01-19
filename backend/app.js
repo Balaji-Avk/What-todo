@@ -8,7 +8,10 @@ const port=3000;
 app.use(express.json());
 app.use(cors());
 
-console.log("testing");
+
+app.get('/', (req, res) => {
+    res.send('Welcome to What ToDo')
+})
 
 app.post('/todo', async (req,res)=>{
     const payload=req.body;
@@ -19,7 +22,6 @@ app.post('/todo', async (req,res)=>{
         })
         return;
     }
-    //put it in mongodb
     await todo.create({
         title:payload.title,
         description:payload.description,
@@ -53,4 +55,6 @@ app.put('/completed',async (req,res)=>{
 });
 
 
-app.listen(port);
+app.listen(port,()=>() => {
+    console.log(`✅ Server is running on port ${PORT}`);
+  });
