@@ -5,7 +5,7 @@ export function CreateTodo(){
     const [description,setDescription]=useState("");
 
     const handleAdd = async (event)=>{
-        const response = await fetch('http://localhost:3000/todo',{
+        const response = await fetch('https://what-todo-api.vercel.app/todo',{
             method:'POST',
             body:JSON.stringify({
             title:title,
