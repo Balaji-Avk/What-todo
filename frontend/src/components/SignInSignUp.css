@@ -1,0 +1,106 @@
+.SignIn-body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/login-background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;  
+    min-height: 100vh;
+    margin: 0;
+    padding:0;
+    height:100%;
+    width:100%;
+}
+.wrapper{
+    background-color: transparent;
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    width:420px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.wrapper .input-box{
+    justify-content: center;
+    margin-top:2px;
+    margin-bottom:8px;
+    text-align: center;
+}
+.input-box input{
+    backdrop-filter: blur(5px);
+    justify-content: right;
+    background: transparent;
+    border:2px solid rgba(255,255,255,.2);
+    border-style:solid;
+    height: 30px;
+    border-radius: 18px;
+    width:50%;
+    text-align:center;
+}
+
+.input-box input::placeholder{
+    color:rgb(58, 58, 58);
+    text-align:center;
+}
+.wrapper .password-reset{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    margin-right: 20px;
+    margin-left:30px;
+    color:rgb(220, 162, 121);
+    text-shadow: rgb(0, 0, 0) 10px   10px 15px;
+}
+.password-reset a{
+    text-align:right; 
+    margin-right:15px;
+    color:rgb(220, 162, 121);
+}
+.btns-container{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    max-width:225px;
+    width: 100%;
+}
+.flex-middle{
+    margin-top: 15px;
+    margin-bottom:15px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    width:100%;
+}
+.signUpsingIn-btns {
+    width:100px;
+    height:45px;
+    border:none;
+    outline:none;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    cursor:pointer;
+}
+.btns-container :hover{
+    background-color:rgb(220, 162, 121);
+    border-width: 2px;
+    border-style: solid;
+    border-color:black;
+}
+.signUpsingIn-btns :hover{
+    border:none;
+}
+
+#gray .btns-container :hover{
+    background-color: white;
+}
+
+.error-msg{
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+.header-bar{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ background-color: bisque;
+}
+.header-bar .quote{
+    padding-top:15px;
+    padding-bottom:15px;
+    text-align: center;
+}
+.header-bar .author{
+    padding-top:15px;
+    padding-bottom:15px;
+    text-align: center;
+}
