@@ -7,9 +7,16 @@ mongoose.connect(connection_url);
 const todoSchema=mongoose.Schema({
     title:String,
     description:String,
-    todostatus:Boolean
+    todostatus:Boolean,
+    username:String
+})
+
+const userSchema=mongoose.Schema({
+    username:String,
+    password:String
 })
 
 const todo = mongoose.model("todo",todoSchema);
+const user = mongoose.model("user",userSchema);
 
-module.exports ={todo};
+module.exports ={todo,user};
