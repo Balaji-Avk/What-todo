@@ -38,7 +38,7 @@ export function Login() {
     }
     const handleSignUp=async function (){
         console.log('hey there');
-        const response=await fetch('http://localhost:3000/auth/signup',{
+        const response=await fetch('https://what-todo-api.vercel.app/auth/signup',{
             method:"POST",
             body:JSON.stringify({
                 username:username,

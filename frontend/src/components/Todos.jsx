@@ -8,7 +8,7 @@ export function Todos() {
     useEffect(() => {
         const fetchTodos = async () => {
             try {
-                const response = await fetch('http://localhost:3000/todos',{
+                const response = await fetch('https://what-todo-api.vercel.app/todos',{
                     method:'GET',
                     headers:{
                         "authorization":localStorage.getItem("accessToken"),
