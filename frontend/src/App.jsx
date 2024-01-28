@@ -19,7 +19,7 @@ function App() {
                                                     </div>
                                                     </div>}></Route>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/home" replace/>} />
       </Routes>
     </Router>
   )
