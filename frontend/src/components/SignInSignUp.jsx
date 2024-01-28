@@ -10,8 +10,7 @@ export function Login() {
     const [resmsg,setResmsg]=useState("");
 
     const handleSignIn=async function (){
-        console.log('hey there i am from sign in');
-        const response=await fetch('http://localhost:3000/auth/signin',{
+        const response=await fetch('https://whattodoo.vercel.app/auth/signin',{
             method:"POST",
             body:JSON.stringify({
                 username:username,
@@ -24,21 +23,18 @@ export function Login() {
         if(!response.ok){
             const finalRes=await response.json();
             setResmsg(finalRes.error);
-            console.log(finalRes.error);
         }
         else{
             const finalRes=await response.json();
             setResmsg(finalRes.msg);
             const token="Bearer "+finalRes.accessToken;
             localStorage.setItem("accessToken",token);
-            console.log(token);
             navigateTo("/home");
         }
 
     }
     const handleSignUp=async function (){
-        console.log('hey there');
-        const response=await fetch('https://what-todo-api.vercel.app/auth/signup',{
+        const response=await fetch('https://whattodoo.vercel.app/auth/signup',{
             method:"POST",
             body:JSON.stringify({
                 username:username,
@@ -51,12 +47,10 @@ export function Login() {
         if(!response.ok){
             const finalRes=await response.json();
             setResmsg(finalRes.error);
-            console.log(finalRes.error);
         }
         else{
             const finalRes=await response.json();
             setResmsg(finalRes.msg);
-            console.log(finalRes.msg);
         }        
     }
     const handleSubmit = (event) => {
