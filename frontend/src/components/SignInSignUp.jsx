@@ -10,7 +10,7 @@ export function Login() {
     const [resmsg,setResmsg]=useState("");
 
     const handleSignIn=async function (){
-        const response=await fetch('https://whattodoo.vercel.app/auth/signin',{
+        const response=await fetch('https://what-todo-api.vercel.app/auth/signin',{
             method:"POST",
             body:JSON.stringify({
                 username:username,
@@ -34,7 +34,7 @@ export function Login() {
 
     }
     const handleSignUp=async function (){
-        const response=await fetch('https://whattodoo.vercel.app/auth/signup',{
+        const response=await fetch('https://what-todo-api.vercel.app/auth/signup',{
             method:"POST",
             body:JSON.stringify({
                 username:username,
