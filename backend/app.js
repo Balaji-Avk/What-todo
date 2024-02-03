@@ -3,6 +3,7 @@ const {router}=require('./auth');
 const cors = require('cors');
 const { createTodo,updateTodo } = require( './types');
 const {todo}=require("./db");
+const quotesjson = require('./quotes');
 const express=require('express');
 const app=express();
 const port=3000;
@@ -35,7 +36,7 @@ app.post('/todo', verifyToken ,async (req,res)=>{
     })
 });
 app.get('/todos',verifyToken,async (req,res)=>{
-    const response = await todo.find({username:req.headers['username']});
+    const response = await todo.find({username:req.headers['username'],todostatus:false});
     res.json({
         response
     })
@@ -49,14 +50,17 @@ app.put('/completed',verifyToken,async (req,res)=>{
         })
         return;
     }
-    todo.findOneAndUpdate({_id:payload.id},{
+    await todo.findOneAndUpdate({_id:payload.id},{
         todostatus:true
     })
     res.json({
         msg:"Todo marked as completed"
     })
 });
-
+app.get('/quote',(req,res)=>{
+    const randomNum=Math.floor(Math.random()*415);
+    res.status(200).json(quotesjson.quotes[randomNum]);
+})
 
 app.listen(port,()=>{
     console.log(`✅ Server is running on port ${port}`);
