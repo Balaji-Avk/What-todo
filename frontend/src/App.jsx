@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Route,Navigate,Routes} from 'react-router-dom';
 import { CreateTodo } from './components/CreateTodo';
 import { Todos } from './components/Todos';
 import { Quote } from './components/Quote';
+import {RecoilRoot} from 'recoil';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
                                                         <Quote /> 
                                                     </div>
                                                     <div className='home-div-main'>
-                                                      <CreateTodo /> <Todos />
+                                                      <RecoilRoot ><CreateTodo /> <Todos /></RecoilRoot>
                                                     </div>
                                                     </div>}></Route>
         <Route path="/" element={<Navigate to="/home" />} />

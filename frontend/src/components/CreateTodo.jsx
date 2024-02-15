@@ -1,10 +1,12 @@
 import {useState} from 'react';
 import './CreateTodo.css';
+import {useSetRecoilState}  from "recoil";
+import {refresh_todos} from '../state/atoms/refresh';
 
 export function CreateTodo(){
     const [title,setTitle] = useState("");
     const [description,setDescription]=useState("");
-
+    const set_refresh_todos=useSetRecoilState(refresh_todos);
     const handleAdd = async (event)=>{
         event.preventDefault();
         const response = await fetch('https://what-todo-api.vercel.app/todo',{
@@ -23,6 +25,7 @@ export function CreateTodo(){
             setTitle("");
             setDescription("");
             alert("todo added");
+            set_refresh_todos(prev=>!prev);
         }
         else{
             alert("failed to add todo");
