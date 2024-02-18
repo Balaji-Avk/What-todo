@@ -54,15 +54,15 @@ export function Todos() {
     }
     return (
 
-        <div className="todos-main">
+        <ul className="todos-main">
             {todos.map((todo) => (
-                <div className="todos-todo" key={todo._id}>
+                <li className="todos-todo" key={todo._id}>
                     <div className="todos-todo-name"><h2>{todo.title}</h2></div>
                     <div className="todos-todo-description"><p>{todo.description}</p></div>
                     <div className='todos-todo-name-btn'><button onClick={()=>{handleComplete(todo._id)}}>{todo.todostatus ? 'completed' : 'mark as complete'}</button></div>
-                </div>
+                </li>
             ))}
-        </div>  
+        </ul>  
     );
 }
 
