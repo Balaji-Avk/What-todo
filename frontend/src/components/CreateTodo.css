@@ -27,6 +27,7 @@
     height:100px;
     border-radius: 20px;
     border: 2px solid black;
+    resize:none;
 }
 .create-todo-container button{
     height: 40px;

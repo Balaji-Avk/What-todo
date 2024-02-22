@@ -43,10 +43,9 @@ export function CreateTodo(){
                     setTitle(event.target.value);
                 }} type='text' placeholder="Title" value={title} className='title-input' required></input><br />
 
-                <input onChange={(event)=>{
+                <textarea onChange={(event)=>{
                     setDescription(event.target.value);
-                }} type='text' placeholder="Description" value={description} className='description-input' required></input> <br />
-
+                }} placeholder="Description" className='description-input' value={description}></textarea><br />
                 <button type='submit'>Add</button>
             </div>
             </form>

@@ -42,6 +42,12 @@
 .todos-todo-description{
     min-width: 220px;
     min-height: 190px;
+    font-size: 15px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 .todos-todo .todos-todo-name-btn{
     justify-content: center;
